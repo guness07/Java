@@ -58,15 +58,15 @@ public class App {
      * Hint: Map.merge() - One method to rule them all
      * https://nurkiewicz.com/2019/03/mapmerge-one-method-to-rule-them-all.html
      */
-    static <K extends Enum<K>> void incrementWithWildcard(Map<? extends K, Integer> map, K key) {
-    Integer frequency = map.getOrDefault(key, 0);
-    map.put(key, frequency + 1);
-}
+    static <K extends Enum<K>> void incrementWithWildcard(Map<K, Integer> map, K key) {
+        Integer frequency = map.getOrDefault(key, 0);
+        map.put(key, frequency + 1);
+    }
 
     static <E extends Enum<E>> void incrementWithTypeParameter(Map<E, Integer> map, E key) {
-    Integer frequency = map.getOrDefault(key, 0);
-    map.put(key, frequency + 1);
-}
+        Integer frequency = map.getOrDefault(key, 0);
+        map.put(key, frequency + 1);
+    }
 
     static <T> void incrementWithWildcardAndGeneric(Map<? extends T, Integer> map, T key) {
     Integer frequency = map.getOrDefault(key, 0);
